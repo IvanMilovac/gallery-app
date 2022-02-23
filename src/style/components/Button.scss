@@ -1,0 +1,5 @@
+@import "../partials/mixins";
+
+.btn {
+  @include button(0.5rem 1rem, 0, $clr-green, #fff);
+}

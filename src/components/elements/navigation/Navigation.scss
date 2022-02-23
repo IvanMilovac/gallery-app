@@ -1,0 +1,36 @@
+@import "../../../style/partials/variables";
+@import "../../../style/partials/mixins";
+
+header {
+  padding: 0.5rem 4rem;
+  width: 100vw;
+  background: $clr-yellow;
+  @include for-size(phone-only) {
+    padding: 0.5rem 1.75rem;
+  }
+}
+
+.navigation__container {
+  display: flex;
+  justify-content: space-between;
+  > img:first-of-type {
+    display: none;
+    @include for-size(phone-only) {
+      display: block;
+    }
+  }
+}
+
+.user__info {
+  display: flex;
+  align-items: center;
+  p {
+    display: inline-block;
+    padding-inline: 0.75rem;
+    line-height: 100%;
+    font-weight: 700;
+  }
+  @include for-size(phone-only) {
+    display: none;
+  }
+}

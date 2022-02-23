@@ -1,0 +1,2 @@
+:root{font-family:"Roboto",sans-serif}:root{font-family:"Roboto",sans-serif}.login__container{padding-left:13.5rem;width:100%;flex:1 0 auto;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}@media(max-width: 599px){.login__container{padding-left:0}}.login__title{margin-block:1.5rem;font-weight:bold;font-size:2rem}form{display:flex;flex-direction:column;gap:2rem}form button{width:-webkit-max-content;width:-moz-max-content;width:max-content;margin-left:1rem}
+/*# sourceMappingURL=Login.min.css.map */

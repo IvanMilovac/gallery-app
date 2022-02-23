@@ -1,0 +1,145 @@
+:root {
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  font-family: "Roboto", sans-serif;
+}
+
+.login__container {
+  padding-left: 13.5rem;
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (max-width: 599px) {
+  .login__container {
+    padding-left: 3.75rem;
+  }
+}
+
+.login__logo-container {
+  padding: 1.125rem 13rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 3.75rem;
+  left: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: #fec210;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  min-width: 40%;
+  -webkit-animation: slideIn 0.5s forwards;
+          animation: slideIn 0.5s forwards;
+}
+
+.login__logo-container img {
+  width: 17rem;
+}
+
+@media (max-width: 599px) {
+  .login__logo-container {
+    padding: 1.125rem 2rem;
+    top: 2.625rem;
+  }
+  .login__logo-container img {
+    width: 13rem;
+  }
+}
+
+@-webkit-keyframes slideIn {
+  0% {
+    left: -100%;
+    img {
+      opacity: 0;
+    }
+  }
+  100% {
+    left: 0;
+    img {
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    left: -100%;
+    img {
+      opacity: 0;
+    }
+  }
+  100% {
+    left: 0;
+    img {
+      opacity: 1;
+    }
+  }
+}
+
+.login__title {
+  margin-block: 1.5rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.submission {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.submission button {
+  margin-right: 1rem;
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+}
+
+form button {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  margin-left: 1rem;
+}
+
+@media (max-width: 599px) {
+  form {
+    gap: 1.25rem;
+  }
+}
+/*# sourceMappingURL=Login.css.map */

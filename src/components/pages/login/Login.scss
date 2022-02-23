@@ -1,0 +1,81 @@
+@import "../../../style/partials/variables";
+@import "../../../style/partials/mixins";
+
+.login__container {
+  padding-left: 13.5rem;
+  width: 100%;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  @include for-size(phone-only) {
+    padding-left: 3.75rem;
+  }
+}
+
+.login__logo-container {
+  padding: 1.125rem 13rem;
+  display: flex;
+  position: absolute;
+  top: 3.75rem;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  background: $clr-yellow;
+  width: max-content;
+  min-width: 40%;
+  img {
+    width: 17rem;
+  }
+  animation: slideIn 0.5s forwards;
+  @include for-size(phone-only) {
+    padding: 1.125rem 2rem;
+    top: 2.625rem;
+    img {
+      width: 13rem;
+    }
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    left: -100%;
+    img {
+      opacity: 0;
+    }
+  }
+  100% {
+    left: 0;
+    img {
+      opacity: 1;
+    }
+  }
+}
+
+.login__title {
+  margin-block: 1.5rem;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.submission {
+  display: flex;
+  align-items: center;
+  button {
+    margin-right: 1rem;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  button {
+    width: max-content;
+    margin-left: 1rem;
+  }
+  @include for-size(phone-only) {
+    gap: 1.25rem;
+  }
+}
