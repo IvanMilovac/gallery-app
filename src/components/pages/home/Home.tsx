@@ -1,6 +1,6 @@
-import Navigation from "../../elements/navigation/Navigation";
-import Sidebar from "../../elements/sidebar/Sidebar";
-import Main from "../../elements/main/Main";
+import Navigation from "../../layout/navigation/Navigation";
+import Sidebar from "../../layout/sidebar/Sidebar";
+import Main from "../../layout/main/Main";
 
 import "./Home.css";
 

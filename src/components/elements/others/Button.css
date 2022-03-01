@@ -1,0 +1,44 @@
+:root {
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  font-family: "Roboto", sans-serif;
+}
+
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #277a7f;
+  text-transform: uppercase;
+  -webkit-transition: 0.2s all ease-in-out;
+  transition: 0.2s all ease-in-out;
+}
+
+.btn:hover {
+  background-color: #236f73;
+}
+
+.btn:focus {
+  background-color: #21676b;
+}
+
+.btn:disabled {
+  background-color: gray;
+  cursor: inherit;
+}
+
+.btn img {
+  width: 1rem;
+}
+/*# sourceMappingURL=Button.css.map */

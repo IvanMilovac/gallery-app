@@ -1,0 +1,44 @@
+:root {
+  font-family: "Roboto", sans-serif;
+}
+
+:root {
+  font-family: "Roboto", sans-serif;
+}
+
+.input-field {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-height: 6rem;
+}
+
+.input-field label {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.input-field input {
+  width: 28rem;
+  height: 3rem;
+  font-size: 1.125rem;
+  padding-left: 0.5rem;
+  border: 1px solid #a0aec0;
+}
+
+@media (max-width: 599px) {
+  .input-field input {
+    width: 100%;
+  }
+}
+
+.input-field .error {
+  font-size: 0.85rem;
+  color: red;
+}
+/*# sourceMappingURL=Input.css.map */

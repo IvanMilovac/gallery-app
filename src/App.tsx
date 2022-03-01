@@ -13,17 +13,20 @@ function App() {
   const {
     state: { user },
   } = useContext(AuthContext);
+
+  const { email } = user;
+
   return (
     <div className="App">
       <Routes>
         <Route path="/login" element={<Login />} />
 
-        {/* {user.email.length !== 0 && ( */}
-        <>
-          <Route path="/" element={<Home />} />
-          <Route path="/new-image" element={<NewImage />} />
-        </>
-        {/* )} */}
+        {email?.length && (
+          <>
+            <Route path="/" element={<Home />} />
+            <Route path="/new-image" element={<NewImage />} />
+          </>
+        )}
         <Route
           path="*"
           element={loggedIn ? <Navigate to="/" /> : <Navigate to="/login" />}

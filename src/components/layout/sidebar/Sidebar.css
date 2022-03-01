@@ -1,0 +1,91 @@
+:root {
+  font-family: "Roboto", sans-serif;
+}
+
+aside {
+  height: calc(100vh - 88px);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #fff5;
+  -webkit-backdrop-filter: blur(8px);
+          backdrop-filter: blur(8px);
+  overflow: auto;
+  padding: 2.5rem 3.25rem;
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+aside::-webkit-scrollbar {
+  display: none;
+}
+
+aside h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+aside .input-icons {
+  width: 100%;
+  position: relative;
+}
+
+aside .input-icons svg {
+  position: absolute;
+  color: gray;
+  top: 50%;
+  right: 5%;
+}
+
+aside .input-field {
+  width: 100%;
+  padding: 0.85rem 0.5rem;
+  font-size: 0.85rem;
+}
+
+.cards_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.75rem;
+  margin-block: 2rem;
+}
+
+.card-content {
+  padding: 1.5rem 1rem;
+  -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-content img {
+  width: 8rem;
+}
+
+.card-content p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 50%;
+  font-weight: 700;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.review-button svg {
+  width: 2rem;
+  margin-left: 0.5rem;
+}
+/*# sourceMappingURL=Sidebar.css.map */

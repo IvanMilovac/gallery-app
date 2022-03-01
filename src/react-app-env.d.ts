@@ -11,8 +11,23 @@ interface IUser {
   email: string;
   password: string;
 }
+interface IComment {
+  id: string;
+  text: string;
+  user: string;
+}
 
 type Validator = {
   type: string;
   val?: number;
 };
+
+interface IImage {
+  id: string;
+  title: string;
+  user: string;
+  description: string;
+  imageSmall: string;
+  imageLarge: string;
+  comments: IComment[];
+}

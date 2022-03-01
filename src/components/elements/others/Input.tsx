@@ -1,50 +1,38 @@
 import React from "react";
 
-import "../../../style/components/InputField.css";
+import "./Input.css";
 
 interface IProps {
-  inputValue: any;
-  errorText?: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  onBlur?: (e: any) => void;
-  name: string;
-  type?: string;
+  inputClass?: string;
   label?: string;
-  required?: boolean;
-  inputclass: string;
-  autoComplete?: boolean;
+  error?: string;
+  leftIcon?: string;
+  rightIcon?: string;
+  type?: "text" | "checkbox" | "email" | "password";
+  placeholder?: string;
+  name: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  ref: React.Ref<any>;
 }
 
-const Input = ({
-  inputValue,
-  onChange,
-  onBlur,
-  name,
-  type = "text",
-  label,
-  required = false,
-  inputclass,
-  autoComplete = false,
-  errorText,
-}: IProps) => {
-  const { value, isValid, isTouched } = inputValue;
+const Input: React.FC<IProps> = React.forwardRef((props, ref) => {
+  const {
+    inputClass = "input-field",
+    label,
+    error,
+    leftIcon,
+    rightIcon,
+    ...rest
+  } = props;
   return (
-    <div className={inputclass}>
-      <label htmlFor={name}>{label}</label>
-      <br />
-      <input
-        className={!isValid && isTouched ? "invalid" : ""}
-        type={type}
-        name={name}
-        required={required}
-        value={value}
-        onChange={onChange}
-        onBlur={onBlur}
-        autoComplete={autoComplete ? "on" : "off"}
-      />
-      {!isValid && isTouched && <p className="error-text">{errorText}</p>}
+    <div className={inputClass}>
+      {label && <label htmlFor={rest.name}>{label}</label>}
+      {leftIcon}
+      <input {...rest} ref={ref} />
+      {rightIcon}
+      {error && <p className="error">{error}</p>}
     </div>
   );
-};
+});
 
 export default Input;

@@ -1,0 +1,28 @@
+@import "../../../style/partials/variables";
+@import "../../../style/partials/mixins";
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  color: $clr-white;
+  background-color: $clr-green;
+  text-transform: uppercase;
+  @include trans(0.2s all ease-in-out);
+  &:hover {
+    background-color: darken($clr-green, 3%);
+  }
+  &:focus {
+    background-color: darken($clr-green, 5%);
+  }
+  &:disabled {
+    background-color: gray;
+    cursor: inherit;
+  }
+  img {
+    width: 1rem;
+  }
+}

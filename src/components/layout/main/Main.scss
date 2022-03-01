@@ -1,0 +1,165 @@
+@import "../../../style/partials/variables";
+
+main {
+  margin-left: 23.5rem;
+  height: calc(100vh - 88px);
+}
+
+.main-container {
+  padding: 5.5rem 8rem;
+  position: relative;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+  width: 100%;
+  overflow: hidden;
+  height: calc(100vh - 88px);
+  img {
+    align-self: center;
+    max-width: 100%;
+    min-width: 0;
+    flex-grow: 1;
+    overflow: hidden;
+    object-fit: contain;
+  }
+  .image-description {
+    flex-shrink: 0;
+    text-align: center;
+    overflow: hidden;
+    font-size: 1.5rem;
+    font-weight: 900;
+    max-width: 80%;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+}
+
+.chat__icon {
+  position: absolute;
+  bottom: 3rem;
+  right: 2rem;
+  cursor: pointer;
+}
+
+.review__container {
+  position: absolute;
+  bottom: 7.5rem;
+  right: 2rem;
+  width: 23.5rem;
+  background: white;
+  .review__container-header {
+    width: 100%;
+    padding-block: 1rem;
+    background: $clr-yellow;
+    display: flex;
+    align-items: center;
+    svg {
+      margin-inline: 1rem;
+    }
+    p {
+      font-weight: 700;
+    }
+  }
+
+  .review__container-body {
+    padding: 1rem 1.75rem 2rem;
+    font-size: 0.875rem;
+    font-weight: 900;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    overflow-y: scroll;
+    max-height: 450px;
+    img {
+      width: 100%;
+      min-height: 10rem;
+    }
+    .input-icons {
+      margin-top: 0;
+    }
+    .left-comment {
+      align-self: flex-start;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      max-width: 70%;
+      .comment-avatar {
+        flex-shrink: 0;
+        background: $clr-gray;
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 50%;
+      }
+      p {
+        display: inline-block;
+        background: $clr-gray;
+        padding: 0.5rem 1rem;
+      }
+    }
+    .right-comment {
+      align-self: flex-end;
+      max-width: 70%;
+      padding: 0.5rem 1rem;
+      position: relative;
+      background: $clr-yellow;
+      &:hover {
+        .buttons-group {
+          display: flex;
+        }
+      }
+    }
+    .buttons-group {
+      position: absolute;
+      right: 0;
+      display: none;
+      gap: 0.7rem;
+      .circle-button {
+        border-radius: 50%;
+        border: 2px solid black;
+        background: $clr-yellow;
+        width: 2rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .input-icons svg {
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0.75rem;
+    color: black;
+  }
+
+  .comment-input {
+    width: 100%;
+    padding: 1rem 2rem;
+    font-size: 0.95rem;
+    border: none;
+    border-top: 1px solid black;
+    &::placeholder {
+      color: #000;
+    }
+  }
+}
+
+.scroll-div {
+  height: 4px;
+  width: 100%;
+  background: red;
+}
+
+.edit-input {
+  padding: 0.5rem;
+  width: 100%;
+  font-size: 0.85rem;
+}
+
+.hide {
+  display: none;
+}

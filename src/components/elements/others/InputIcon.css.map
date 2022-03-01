@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAE,AAAA,YAAY,CAAC;EACX,KAAK,EAAE,IAAI;EACX,QAAQ,EAAE,QAAQ;CACnB;;AAED,AAAA,YAAY,CAAC,GAAG,CAAC;EACf,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,GAAG;CACT",
+    "sources": [
+        "InputIcon.scss"
+    ],
+    "names": [],
+    "file": "InputIcon.css"
+}

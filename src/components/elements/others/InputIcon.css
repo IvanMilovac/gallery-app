@@ -1,0 +1,10 @@
+.input-icons {
+  width: 100%;
+  position: relative;
+}
+
+.input-icons svg {
+  position: absolute;
+  top: 50%;
+}
+/*# sourceMappingURL=InputIcon.css.map */

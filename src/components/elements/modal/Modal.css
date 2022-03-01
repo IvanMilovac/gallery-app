@@ -1,0 +1,33 @@
+:root {
+  font-family: "Roboto", sans-serif;
+}
+
+.modal-header {
+  padding: 0.5rem 1.5rem;
+  border-bottom: 1px solid black;
+  background: #fec210;
+  color: black;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.modal-body {
+  padding: 0.5rem 1.125rem;
+  font-size: 1.125rem;
+}
+
+.modal-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.modal-footer button:last-of-type {
+  background: red;
+}
+/*# sourceMappingURL=Modal.css.map */

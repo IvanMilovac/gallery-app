@@ -1,34 +1,36 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
-import "../../../style/components/Button.css";
+import "./Button.css";
 
 interface IProps {
-  children: string;
-  icon?: React.ReactElement<any>;
-  isLoading?: boolean;
-  buttonclass: string;
-  type?: "button" | "submit" | "reset" | undefined;
+  children: ReactNode;
+  leftIcon?: any;
+  rightIcon?: any;
+  buttonClass?: string;
+  type?: "button" | "submit" | "reset";
   disabled?: boolean;
   onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
 const Button = ({
   children,
-  buttonclass,
-  icon,
-  isLoading,
+  buttonClass = "btn",
+  leftIcon,
+  rightIcon,
   type = "button",
   disabled = false,
   onClick = () => {},
 }: IProps) => {
   return (
     <button
-      className={`btn ${buttonclass}`}
+      className={buttonClass}
       type={type}
       disabled={disabled}
       onClick={onClick}
     >
+      {leftIcon}
       {children}
+      {rightIcon}
     </button>
   );
 };

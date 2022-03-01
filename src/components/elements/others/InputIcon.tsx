@@ -1,22 +1,40 @@
 import React, { ReactNode } from "react";
 
+import "./InputIcon.css";
+
 interface IProps {
-  icon: ReactNode;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
   value: string;
+  placeholder?: string;
+  type?: string;
+  inputClass?: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onKeyUp?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
-const InputIcon = ({ icon, value, onChange }: IProps) => {
+const InputIcon = ({
+  leftIcon,
+  rightIcon,
+  value,
+  onChange,
+  onKeyUp,
+  placeholder="",
+  type = "text",
+  inputClass,
+}: IProps) => {
   return (
     <div className="input-icons">
-      {icon}
+      {leftIcon}
       <input
-        className="input-field"
-        type="text"
-        placeholder="Search showcase..."
+        className={inputClass}
+        type={type}
+        placeholder={placeholder}
         value={value}
         onChange={onChange}
+        onKeyUp={onKeyUp}
       />
+      {rightIcon}
     </div>
   );
 };

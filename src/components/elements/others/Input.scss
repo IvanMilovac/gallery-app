@@ -1,0 +1,29 @@
+@import "../../../style/partials/variables";
+@import "../../../style/partials/mixins";
+
+.input-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 6rem;
+  label {
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  input {
+    width: 28rem;
+    height: 3rem;
+    font-size: 1.125rem;
+    padding-left: 0.5rem;
+    border: 1px solid $clr-input-border;
+  }
+  @include for-size(phone-only) {
+    input {
+      width: 100%;
+    }
+  }
+  .error {
+    font-size: 0.85rem;
+    color: red;
+  }
+}
