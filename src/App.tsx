@@ -1,6 +1,6 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useContext } from "react";
-import { AuthContext } from "./components/context/AuthContext";
+import { AppContext } from "./components/context/AppContext";
 import Home from "./components/pages/home/Home";
 import Login from "./components/pages/login/Login";
 import NewImage from "./components/pages/new-image/NewImage";
@@ -12,7 +12,7 @@ let loggedIn = false;
 function App() {
   const {
     state: { user },
-  } = useContext(AuthContext);
+  } = useContext(AppContext);
 
   const { email } = user;
 

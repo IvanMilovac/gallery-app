@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactNode } from "react";
 
 import "./Input.css";
 
@@ -6,8 +6,8 @@ interface IProps {
   inputClass?: string;
   label?: string;
   error?: string;
-  leftIcon?: string;
-  rightIcon?: string;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
   type?: "text" | "checkbox" | "email" | "password";
   placeholder?: string;
   name: string;

@@ -7,7 +7,7 @@ import Input from "../../elements/others/Input";
 import Button from "../../elements/others/Button";
 import Loader from "../../elements/loader/Loader";
 
-import { AuthContext } from "../../context/AuthContext";
+import { AppContext } from "../../context/AppContext";
 
 import {
   EmailFieldValidation,
@@ -16,7 +16,6 @@ import {
 import { getErrorMessage } from "../../../utils";
 
 import AgilnoLogo from "../../../assets/AgilnoLogo.png";
-import { users } from "../../../fakeData";
 
 import "./Login.css";
 
@@ -28,13 +27,18 @@ interface ILoginForm {
 const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
 
-  const { dispatch } = useContext(AuthContext);
+  const {
+    dispatch,
+    state: { users },
+  } = useContext(AppContext);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<ILoginForm>();
+
+  const { email, password } = errors;
 
   const navigate = useNavigate();
 
@@ -72,13 +76,13 @@ const Login = () => {
       <form onSubmit={handleSubmit(handleFormSubmit)} noValidate>
         <Input
           label="Email address"
-          error={errors.email?.message}
+          error={email?.message}
           type="email"
           {...register("email", EmailFieldValidation)}
         />
         <Input
           label="Password"
-          error={errors.password?.message}
+          error={password?.message}
           type="password"
           {...register("password", PasswordFieldValidation)}
         />

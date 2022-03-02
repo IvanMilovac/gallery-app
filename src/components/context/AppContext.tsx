@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, ReactNode } from "react";
 
-import { images } from "../../fakeData";
+import { images, users } from "../../fakeData";
 
 type Action =
   | { type: "HANDLE_LOGIN"; payload: IUser }
@@ -14,6 +14,10 @@ type Action =
       payload: { id: string; image: IImage };
     }
   | {
+      type: "UPDATE_COMMENT";
+      payload: { id: string; newComment: string };
+    }
+  | {
       type: "SELECT_IMAGE";
       payload: { image: IImage };
     };
@@ -24,10 +28,16 @@ interface IProviderProps {
 
 const initialState = {
   user: {} as IUser,
+  users: users,
   images,
   selectedImage: images[0],
 };
+
 type AppState = typeof initialState;
+
+const selectImage = (images: IImage[], image: IImage) => {
+  return images.filter((i) => i.id === image.id)[0];
+};
 
 const addNewComment = (
   id: string,
@@ -52,6 +62,17 @@ const deleteComment = (id: string, image: IImage, images: IImage[]) => {
   });
 };
 
+const updateComment = (id: string, newComment: string, image: IImage) => {
+  console.log({ image });
+  return {
+    ...image,
+    comments: image.comments.map((c) => {
+      if (c.id !== id) return c;
+      return { ...c, text: newComment };
+    }),
+  };
+};
+
 const reducer = (state: AppState, action: Action) => {
   switch (action.type) {
     case "HANDLE_LOGIN":
@@ -59,7 +80,10 @@ const reducer = (state: AppState, action: Action) => {
     case "HANDLE_LOGOUT":
       return { ...state, user: initialState.user };
     case "SELECT_IMAGE":
-      return { ...state, selectedImage: action.payload.image };
+      return {
+        ...state,
+        selectedImage: selectImage(state.images, action.payload.image),
+      };
     case "ADD_COMMENT":
       return {
         ...state,
@@ -97,23 +121,41 @@ const reducer = (state: AppState, action: Action) => {
           ),
         },
       };
+    case "UPDATE_COMMENT":
+      return {
+        ...state,
+        images: images.map((img) => {
+          if (img.id !== state.selectedImage.id) return img;
+          return updateComment(
+            action.payload.id,
+            action.payload.newComment,
+            img
+          );
+        }),
+        selectedImage: updateComment(
+          action.payload.id,
+          action.payload.newComment,
+          state.selectedImage
+        ),
+      };
     default:
       return state;
   }
 };
 
-const AuthContext = createContext<{
+const AppContext = createContext<{
   state: AppState;
   dispatch: React.Dispatch<Action>;
 }>({ state: initialState, dispatch: () => {} });
 
-function AuthContextProvider({ children }: IProviderProps) {
+function AppContextProvider({ children }: IProviderProps) {
   const [state, dispatch] = useReducer(reducer, initialState);
+
   return (
-    <AuthContext.Provider value={{ state, dispatch }}>
+    <AppContext.Provider value={{ state, dispatch }}>
       {children}
-    </AuthContext.Provider>
+    </AppContext.Provider>
   );
 }
 
-export { AuthContext, AuthContextProvider };
+export { AppContext, AppContextProvider };

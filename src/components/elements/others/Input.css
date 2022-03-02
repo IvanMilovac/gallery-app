@@ -15,6 +15,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   min-height: 6rem;
 }
 
@@ -40,5 +43,22 @@
 .input-field .error {
   font-size: 0.85rem;
   color: red;
+}
+
+.input-field svg {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  color: #a0aec0;
+  font-size: 1.25rem;
+}
+
+.input-field .left-icon {
+  left: 1rem;
+}
+
+.input-field .right-icon {
+  right: 1rem;
 }
 /*# sourceMappingURL=Input.css.map */

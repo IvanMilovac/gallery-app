@@ -5,6 +5,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-height: 6rem;
   label {
     font-weight: 700;
@@ -25,5 +26,18 @@
   .error {
     font-size: 0.85rem;
     color: red;
+  }
+  svg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $clr-input-border;
+    font-size: 1.25rem;
+  }
+  .left-icon {
+    left: 1rem;
+  }
+  .right-icon {
+    right: 1rem;
   }
 }

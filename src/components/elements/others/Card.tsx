@@ -1,25 +1,28 @@
-import React from "react";
 import Button from "./Button";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { useContext } from "react";
-import { AuthContext } from "../../context/AuthContext";
+import { AppContext } from "../../context/AppContext";
+
 interface IProps {
   image: IImage;
+  handleOpen: () => void;
 }
 
-const Card = ({ image }: IProps) => {
-  const { dispatch } = useContext(AuthContext);
+const Card = ({ image, handleOpen }: IProps) => {
+  const { dispatch } = useContext(AppContext);
+
+  const handleClick = () => {
+    dispatch({ type: "SELECT_IMAGE", payload: { image } });
+    handleOpen();
+  };
+
   return (
     <div className="card">
       <div className="card-content">
         <img src={image.imageSmall} alt="" />
         <p>{image.title}</p>
       </div>
-      <Button
-        buttonClass="review-button"
-        rightIcon={<HiOutlineArrowNarrowRight />}
-        onClick={() => dispatch({ type: "SELECT_IMAGE", payload: { image } })}
-      >
+      <Button rightIcon={<HiOutlineArrowNarrowRight />} onClick={handleClick}>
         Review
       </Button>
     </div>
