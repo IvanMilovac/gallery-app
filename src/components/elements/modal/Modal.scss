@@ -6,12 +6,14 @@
   background: $clr-yellow;
   color: black;
   font-weight: 700;
+  text-align: center;
   font-size: 1.125rem;
 }
 
 .modal-body {
   padding: 0.5rem 1.125rem;
   font-size: 1.125rem;
+  text-align: center;
 }
 
 .modal-footer {
@@ -21,7 +23,7 @@
   padding: 0.5rem 1rem;
   button {
     &:last-of-type {
-        background: red;
+      background: red;
     }
   }
 }

@@ -44,7 +44,7 @@ const Sidebar = ({ openAside, handleOpen }: IProps) => {
       <Input
         {...register("searchTerm")}
         placeholder="Search showcase..."
-        rightIcon={<BiSearch className="right-icon" />}
+        icon={<BiSearch className="right-icon" />}
       />
       <div className="cards_container">
         {!filteredImages.length ? (

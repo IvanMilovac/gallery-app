@@ -1,11 +1,11 @@
 import { useState, useContext, useEffect } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoPaperPlaneOutline } from "react-icons/io5";
-import InputIcon from "../others/InputIcon";
 import { v4 as uuidv4 } from "uuid";
 import { AppContext } from "../../context/AppContext";
 import { animateScroll } from "react-scroll";
 import Comment from "../comment/Comment";
+import Input from "../others/Input";
 
 interface IProps {
   openChat: boolean;
@@ -73,13 +73,15 @@ const Chat = ({ openChat, setOpenChat }: IProps) => {
             />
           ))}
         </div>
-        <InputIcon
-          inputClass="comment-input"
-          rightIcon={<IoPaperPlaneOutline onClick={handleClick} />}
-          value={comment}
+        <Input
+          name="comment"
           onChange={(e) => setComment(e.target.value)}
-          placeholder="LEAVE COMMENT"
           onKeyUp={handleEnterKey}
+          value={comment}
+          placeholder="LEAVE COMMENT"
+          icon={
+            <IoPaperPlaneOutline className="right-icon" onClick={handleClick} />
+          }
         />
       </div>
     </>

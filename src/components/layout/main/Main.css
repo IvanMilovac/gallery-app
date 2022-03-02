@@ -180,6 +180,20 @@ main {
   max-height: 450px;
 }
 
+.review__container .review__container-body .input-field input {
+  background: transparent;
+  padding: 0 0.25rem;
+  height: 1.75rem;
+  border: 0;
+  outline: none;
+  border-bottom: 1px solid #2c2c2c;
+  font-size: 0.85rem;
+}
+
+.review__container .review__container-body .input-field svg {
+  color: #2c2c2c;
+}
+
 @media (max-width: 599px) {
   .review__container .review__container-body {
     height: 370px;
@@ -189,10 +203,6 @@ main {
 .review__container .review__container-body img {
   width: 100%;
   min-height: 10rem;
-}
-
-.review__container .review__container-body .input-icons {
-  margin-top: 0;
 }
 
 .review__container .review__container-body .left-comment {
@@ -261,6 +271,42 @@ main {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
+}
+
+.review__container .input-field {
+  min-height: 0;
+}
+
+.review__container .input-field input {
+  padding-inline: 1rem;
+}
+
+.review__container .input-field input::-webkit-input-placeholder {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+}
+
+.review__container .input-field input:-ms-input-placeholder {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+}
+
+.review__container .input-field input::-ms-input-placeholder {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+}
+
+.review__container .input-field input::placeholder {
+  font-size: 1rem;
+  font-weight: 500;
+  color: black;
+}
+
+.review__container .input-field svg {
+  color: black;
 }
 
 .review__container .input-icons svg {

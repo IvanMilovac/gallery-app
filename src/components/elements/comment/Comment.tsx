@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
 import { RiEditBoxLine } from "react-icons/ri";
+import { AiOutlineSave } from "react-icons/ai";
 import { FaTimes } from "react-icons/fa";
 import { AppContext } from "../../context/AppContext";
 import ModalElement from "../../elements/modal/Modal";
+import Input from "../others/Input";
 
 interface IProps {
   comment: IComment;
@@ -37,6 +39,17 @@ const Comment = ({ comment, rightLeft }: IProps) => {
     }
   };
 
+  const handleClick = (
+    e: React.MouseEvent<SVGElement, MouseEvent>,
+    id: string
+  ) => {
+    dispatch({
+      type: "UPDATE_COMMENT",
+      payload: { id, newComment: commentToEdit },
+    });
+    setEdit(false);
+  };
+
   const handleDeleteComment = (
     e: React.MouseEvent<SVGElement, MouseEvent>,
     id: string
@@ -64,12 +77,19 @@ const Comment = ({ comment, rightLeft }: IProps) => {
       />
       <div className="right-comment">
         {edit && (
-          <input
-            value={commentToEdit}
+          <Input
+            name="edit-comment"
             onChange={handleEditChange}
             onKeyUp={(e) => {
               handleEditEnterKey(e, comment.id);
             }}
+            value={commentToEdit}
+            icon={
+              <AiOutlineSave
+                className="right-icon"
+                onClick={(e) => handleClick(e, comment.id)}
+              />
+            }
           />
         )}
         {!edit && (

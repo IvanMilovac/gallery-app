@@ -6,13 +6,14 @@ interface IProps {
   inputClass?: string;
   label?: string;
   error?: string;
-  leftIcon?: ReactNode;
-  rightIcon?: ReactNode;
+  icon?: ReactNode;
   type?: "text" | "checkbox" | "email" | "password";
   placeholder?: string;
   name: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  ref: React.Ref<any>;
+  onKeyUp?: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  ref?: React.Ref<any>;
+  value?: string;
 }
 
 const Input: React.FC<IProps> = React.forwardRef((props, ref) => {
@@ -20,16 +21,15 @@ const Input: React.FC<IProps> = React.forwardRef((props, ref) => {
     inputClass = "input-field",
     label,
     error,
-    leftIcon,
-    rightIcon,
+    onKeyUp,
+    icon,
     ...rest
   } = props;
   return (
     <div className={inputClass}>
       {label && <label htmlFor={rest.name}>{label}</label>}
-      {leftIcon}
-      <input {...rest} ref={ref} />
-      {rightIcon}
+      {icon}
+      <input {...rest} ref={ref} onKeyUp={onKeyUp} />
       {error && <p className="error">{error}</p>}
     </div>
   );
