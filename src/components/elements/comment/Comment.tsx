@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { RiEditBoxLine } from "react-icons/ri";
 import { AiOutlineSave } from "react-icons/ai";
 import { FaTimes } from "react-icons/fa";
@@ -9,13 +9,20 @@ import Input from "../others/Input";
 interface IProps {
   comment: IComment;
   rightLeft: boolean;
+  openChat: boolean;
 }
 
-const Comment = ({ comment, rightLeft }: IProps) => {
+const Comment = ({ comment, rightLeft, openChat }: IProps) => {
   const [edit, setEdit] = useState(false);
   const [commentToEdit, setCommentToEdit] = useState("");
   const [openModal, setOpenModal] = useState(false);
   const [commentId, setCommentId] = useState("");
+
+  useEffect(() => {
+    if (!openChat) {
+      setEdit(false);
+    }
+  }, [openChat]);
 
   const {
     state: { selectedImage },

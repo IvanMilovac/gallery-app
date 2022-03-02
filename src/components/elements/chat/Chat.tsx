@@ -21,10 +21,13 @@ const Chat = ({ openChat, setOpenChat }: IProps) => {
   const [comment, setComment] = useState("");
 
   useEffect(() => {
+    if (!openChat) {
+      setComment("");
+    }
     animateScroll.scrollToBottom({
       containerId: "comment-body",
     });
-  }, [selectedImage]);
+  }, [selectedImage, openChat]);
 
   const handleClick = () => {
     dispatch({
@@ -67,6 +70,7 @@ const Chat = ({ openChat, setOpenChat }: IProps) => {
             <Comment
               key={comment.id}
               comment={comment}
+              openChat={openChat}
               rightLeft={
                 comment?.user.toLowerCase() === user?.name.toLowerCase()
               }
