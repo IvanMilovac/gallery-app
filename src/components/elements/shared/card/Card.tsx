@@ -1,7 +1,7 @@
-import Button from "./Button";
+import Button from "../button/Button";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { useContext } from "react";
-import { AppContext } from "../../context/AppContext";
+import { AppContext } from "../../../context/AppContext";
 
 interface IProps {
   image: IImage;
@@ -17,10 +17,10 @@ const Card = ({ image, handleOpen }: IProps) => {
   };
 
   return (
-    <div className="card">
-      <div className="card-content">
-        <img src={image.imageSmall} alt="" />
-        <p>{image.title}</p>
+    <div className="sidebar-card">
+      <div className="sidebar-card__content">
+        <img className="sidebar-card__content-image" src={image.imageSmall} alt="" />
+        <p className="sidebar-card__content-title">{image.title}</p>
       </div>
       <Button rightIcon={<HiOutlineArrowNarrowRight />} onClick={handleClick}>
         Review

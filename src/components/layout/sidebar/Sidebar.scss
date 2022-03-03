@@ -1,7 +1,7 @@
 @import "../../../style/partials/variables";
 @import "../../../style/partials/mixins";
 
-aside {
+.sidebar {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -13,17 +13,20 @@ aside {
   overflow: auto;
   padding: 2.5rem 3.25rem;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  .back-arrow {
+
+  &-close {
     position: absolute;
     right: 1rem;
     top: 0.5rem;
     font-size: 2rem;
     display: none;
   }
+
   &::-webkit-scrollbar {
     display: none;
   }
-  h2 {
+
+  &-title {
     font-size: 2.25rem;
     font-weight: 700;
   }
@@ -38,10 +41,10 @@ aside {
     background: #fff;
     left: -100%;
     padding: 2.5rem 1.75rem;
-    h2 {
+    &-title {
       font-size: 1.75rem;
     }
-    .back-arrow {
+    &-close {
       display: block;
     }
   }
@@ -50,24 +53,24 @@ aside {
 .show {
   left: 0 !important;
 }
-.cards_container {
+.sidebar-cards {
   display: flex;
   flex-direction: column;
   gap: 1.75rem;
   margin-block: 2rem;
 }
 
-.card-content {
+.sidebar-card__content {
   display: flex;
   justify-content: space-between;
   gap: 1rem;
   padding: 1.5rem 1rem;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
   margin-bottom: 0.5rem;
-  img {
+  &-image {
     width: 8rem;
   }
-  p {
+  &-title {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -76,7 +79,7 @@ aside {
   }
   @include for-size(phone-only) {
     gap: 0.75rem;
-    img {
+    &-image {
       width: 6rem;
     }
   }

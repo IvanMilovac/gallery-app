@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import { AppContext } from "../../context/AppContext";
 import { animateScroll } from "react-scroll";
 import Comment from "../comment/Comment";
-import Input from "../others/Input";
+import Input from "../shared/input/Input";
 
 interface IProps {
   openChat: boolean;
@@ -59,12 +59,15 @@ const Chat = ({ openChat, setOpenChat }: IProps) => {
 
   return (
     <>
-      <div className={`review__container ${!openChat ? "hide" : ""}`}>
-        <div className="review__container-header">
-          <IoIosArrowBack onClick={() => setOpenChat(!openChat)} />
-          <p>{selectedImage.title}</p>
+      <div className={`review ${!openChat ? "hide" : ""}`}>
+        <div className="review-header">
+          <IoIosArrowBack
+            className="review-header__icon"
+            onClick={() => setOpenChat(!openChat)}
+          />
+          <p className="review-header__title">{selectedImage.title}</p>
         </div>
-        <div className="review__container-body" id="comment-body">
+        <div className="review-body" id="comment-body">
           <img src={selectedImage.imageSmall} alt="" />
           {selectedImage.comments.map((comment) => (
             <Comment

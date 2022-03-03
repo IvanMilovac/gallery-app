@@ -2,9 +2,9 @@ import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 
-import Toast, { toasty } from "../../elements/others/Toast";
-import Input from "../../elements/others/Input";
-import Button from "../../elements/others/Button";
+import Toast, { toasty } from "../../elements/shared/toast/Toast";
+import Input from "../../elements/shared/input/Input";
+import Button from "../../elements/shared/button/Button";
 import Loader from "../../elements/loader/Loader";
 
 import { AppContext } from "../../context/AppContext";
@@ -63,17 +63,17 @@ const Login = () => {
       } finally {
         setIsLoading(false);
       }
-    }, 1250);
+    }, 750);
   };
 
   return (
-    <div className="login__container">
+    <div className="login">
       <Toast />
-      <div className="login__logo-container">
-        <img src={AgilnoLogo} alt="" />
+      <div className="login-logo">
+        <img src={AgilnoLogo} alt="" className="login-logo__image" />
       </div>
-      <p className="login__title">Log In</p>
-      <form onSubmit={handleSubmit(handleFormSubmit)} noValidate>
+      <p className="login-title">Log In</p>
+      <form className="login-form" onSubmit={handleSubmit(handleFormSubmit)} noValidate>
         <Input
           label="Email address"
           error={email?.message}

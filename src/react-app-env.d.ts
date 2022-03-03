@@ -1,5 +1,10 @@
 /// <reference types="react-scripts" />
 
+declare module "*.jpg";
+declare module "*.png";
+declare module "*.jpeg";
+declare module "*.gif";
+
 interface ILoginData {
   email: { value: string; isValid: boolean; isTouched: boolean };
   password: { value: string; isValid: boolean; isTouched: boolean };
@@ -31,3 +36,4 @@ interface IImage {
   imageLarge: string;
   comments: IComment[];
 }
+

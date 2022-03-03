@@ -7,7 +7,7 @@ interface IProps {
   label?: string;
   error?: string;
   icon?: ReactNode;
-  type?: "text" | "checkbox" | "email" | "password";
+  type?: "text" | "checkbox" | "email" | "password" | "file";
   placeholder?: string;
   name: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;

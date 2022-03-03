@@ -4,7 +4,7 @@ import { AiOutlineSave } from "react-icons/ai";
 import { FaTimes } from "react-icons/fa";
 import { AppContext } from "../../context/AppContext";
 import ModalElement from "../../elements/modal/Modal";
-import Input from "../others/Input";
+import Input from "../shared/input/Input";
 
 interface IProps {
   comment: IComment;
@@ -33,10 +33,12 @@ const Comment = ({ comment, rightLeft, openChat }: IProps) => {
     setCommentToEdit(e.target.value);
   };
 
-  const handleEditEnterKey = (
+  const handleEditKey = (
     e: React.KeyboardEvent<HTMLInputElement>,
     id: string
   ) => {
+    console.log(e.key);
+    if (e.key === "Escape") setEdit(false);
     if (e.key === "Enter") {
       dispatch({
         type: "UPDATE_COMMENT",
@@ -88,7 +90,7 @@ const Comment = ({ comment, rightLeft, openChat }: IProps) => {
             name="edit-comment"
             onChange={handleEditChange}
             onKeyUp={(e) => {
-              handleEditEnterKey(e, comment.id);
+              handleEditKey(e, comment.id);
             }}
             value={commentToEdit}
             icon={
@@ -101,7 +103,7 @@ const Comment = ({ comment, rightLeft, openChat }: IProps) => {
         )}
         {!edit && (
           <>
-            {comment.text}
+            <p>{comment.text}</p>
             <div className="buttons-group">
               <div className="circle-button">
                 <RiEditBoxLine

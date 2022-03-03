@@ -1,6 +1,6 @@
 import React from "react";
 import Modal from "react-modal";
-import Button from "../others/Button";
+import Button from "../shared/button/Button";
 import { RiDeleteBin6Line } from "react-icons/ri";
 
 import "./Modal.css";

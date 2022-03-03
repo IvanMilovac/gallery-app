@@ -1,7 +1,7 @@
 @import "../../../style/partials/variables";
 @import "../../../style/partials/mixins";
 
-.login__container {
+.login {
   flex: 1 0 auto;
   display: flex;
   flex-direction: column;
@@ -14,7 +14,7 @@
   }
 }
 
-.login__logo-container {
+.login-logo {
   padding: 1.125rem 13rem;
   display: flex;
   position: absolute;
@@ -25,14 +25,14 @@
   background: $clr-yellow;
   width: max-content;
   min-width: 40%;
-  img {
+  &__image {
     width: 17rem;
   }
   animation: slideIn 0.5s forwards;
   @include for-size(phone-only) {
     padding: 1.125rem 2rem;
     top: 2.625rem;
-    img {
+    &__image {
       width: 13rem;
     }
   }
@@ -41,31 +41,31 @@
 @keyframes slideIn {
   0% {
     left: -100%;
-    img {
+    &__image {
       opacity: 0;
     }
   }
   100% {
     left: 0;
-    img {
+    &__image {
       opacity: 1;
     }
   }
 }
 
-.login__title {
+.login-title {
   margin-block: 1.5rem;
   font-weight: bold;
   font-size: 2rem;
 }
 
-form {
+.login-form {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 2rem;
 
   button {
-    width: max-content;
     margin-left: 1rem;
   }
   @include for-size(phone-only) {

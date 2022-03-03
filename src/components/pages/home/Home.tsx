@@ -8,9 +8,9 @@ const Home = () => {
   const [openAside, setOpenAside] = useState(false);
   const handleOpen = () => setOpenAside((prev) => !prev);
   return (
-    <div className="home__container">
+    <div className="home">
       <Navigation handleOpen={handleOpen} />
-      <div className="home__content">
+      <div className="home-content">
         <Sidebar openAside={openAside} handleOpen={handleOpen} />
         <Main />
       </div>

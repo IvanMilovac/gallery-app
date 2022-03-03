@@ -1,2 +1,2 @@
-.rotate{width:2rem}@-webkit-keyframes rotate{100%{transform:rotate(360deg)}}@keyframes rotate{100%{transform:rotate(360deg)}}
+.rotate{width:2rem;-webkit-animation:rotate .5s linear infinite;animation:rotate .5s linear infinite}@-webkit-keyframes rotate{100%{transform:rotate(360deg)}}@keyframes rotate{100%{transform:rotate(360deg)}}
 /*# sourceMappingURL=Loader.min.css.map */

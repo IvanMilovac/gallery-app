@@ -3,7 +3,7 @@ import React, { ReactNode } from "react";
 import "./Button.css";
 
 interface IProps {
-  children: ReactNode;
+  children?: ReactNode;
   leftIcon?: any;
   rightIcon?: any;
   buttonClass?: string;

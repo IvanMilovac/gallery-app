@@ -6,7 +6,7 @@
   font-family: "Roboto", sans-serif;
 }
 
-.login__container {
+.login {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
@@ -28,12 +28,12 @@
 }
 
 @media (max-width: 599px) {
-  .login__container {
+  .login {
     padding: 3.75rem;
   }
 }
 
-.login__logo-container {
+.login-logo {
   padding: 1.125rem 13rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -56,16 +56,16 @@
           animation: slideIn 0.5s forwards;
 }
 
-.login__logo-container img {
+.login-logo__image {
   width: 17rem;
 }
 
 @media (max-width: 599px) {
-  .login__logo-container {
+  .login-logo {
     padding: 1.125rem 2rem;
     top: 2.625rem;
   }
-  .login__logo-container img {
+  .login-logo__image {
     width: 13rem;
   }
 }
@@ -73,13 +73,13 @@
 @-webkit-keyframes slideIn {
   0% {
     left: -100%;
-    img {
+    __image {
       opacity: 0;
     }
   }
   100% {
     left: 0;
-    img {
+    __image {
       opacity: 1;
     }
   }
@@ -88,25 +88,25 @@
 @keyframes slideIn {
   0% {
     left: -100%;
-    img {
+    __image {
       opacity: 0;
     }
   }
   100% {
     left: 0;
-    img {
+    __image {
       opacity: 1;
     }
   }
 }
 
-.login__title {
+.login-title {
   margin-block: 1.5rem;
   font-weight: bold;
   font-size: 2rem;
 }
 
-form {
+.login-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -114,18 +114,18 @@ form {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   gap: 2rem;
 }
 
-form button {
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+.login-form button {
   margin-left: 1rem;
 }
 
 @media (max-width: 599px) {
-  form {
+  .login-form {
     gap: 1.25rem;
   }
 }

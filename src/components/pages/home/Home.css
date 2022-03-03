@@ -1,4 +1,4 @@
-.home__container {
+.home {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,7 +10,7 @@
   height: 100vh;
 }
 
-.home__content {
+.home-content {
   position: relative;
 }
 /*# sourceMappingURL=Home.css.map */

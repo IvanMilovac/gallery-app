@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import { useForm } from "react-hook-form";
-import Card from "../../elements/others/Card";
-import Input from "../../elements/others/Input";
+import Card from "../../elements/shared/card/Card";
+import Input from "../../elements/shared/input/Input";
 
 import { AppContext } from "../../context/AppContext";
 
@@ -26,7 +26,7 @@ const Sidebar = ({ openAside, handleOpen }: IProps) => {
   const [filteredImages, setFilteredImages] = useState(images);
 
   const { register, watch } = useForm<ISearchImage>();
-  
+
   useEffect(() => {
     const subscription = watch((value) => {
       const filtered = images.filter((item) =>
@@ -38,15 +38,15 @@ const Sidebar = ({ openAside, handleOpen }: IProps) => {
   }, [watch, images]);
 
   return (
-    <aside className={openAside ? "show" : ""}>
-      <BsArrowLeft className="back-arrow" onClick={handleOpen} />
-      <h2>Image Gallery</h2>
+    <aside className={`sidebar ${openAside ? "show" : ""}`}>
+      <BsArrowLeft className="sidebar-close" onClick={handleOpen} />
+      <h2 className="sidebar-title">Image Gallery</h2>
       <Input
         {...register("searchTerm")}
         placeholder="Search showcase..."
         icon={<BiSearch className="right-icon" />}
       />
-      <div className="cards_container">
+      <div className="sidebar-cards">
         {!filteredImages.length ? (
           <p>No images found</p>
         ) : (

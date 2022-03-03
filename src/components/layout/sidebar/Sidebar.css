@@ -6,7 +6,7 @@
   font-family: "Roboto", sans-serif;
 }
 
-aside {
+.sidebar {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -22,7 +22,7 @@ aside {
           box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-aside .back-arrow {
+.sidebar-close {
   position: absolute;
   right: 1rem;
   top: 0.5rem;
@@ -30,31 +30,31 @@ aside .back-arrow {
   display: none;
 }
 
-aside::-webkit-scrollbar {
+.sidebar::-webkit-scrollbar {
   display: none;
 }
 
-aside h2 {
+.sidebar-title {
   font-size: 2.25rem;
   font-weight: 700;
 }
 
-aside .input-field input {
+.sidebar .input-field input {
   width: 100%;
 }
 
 @media (max-width: 599px) {
-  aside {
+  .sidebar {
     position: fixed;
     width: 85%;
     background: #fff;
     left: -100%;
     padding: 2.5rem 1.75rem;
   }
-  aside h2 {
+  .sidebar-title {
     font-size: 1.75rem;
   }
-  aside .back-arrow {
+  .sidebar-close {
     display: block;
   }
 }
@@ -63,7 +63,7 @@ aside .input-field input {
   left: 0 !important;
 }
 
-.cards_container {
+.sidebar-cards {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -75,7 +75,7 @@ aside .input-field input {
   margin-block: 2rem;
 }
 
-.card-content {
+.sidebar-card__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -89,11 +89,11 @@ aside .input-field input {
   margin-bottom: 0.5rem;
 }
 
-.card-content img {
+.sidebar-card__content-image {
   width: 8rem;
 }
 
-.card-content p {
+.sidebar-card__content-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -108,10 +108,10 @@ aside .input-field input {
 }
 
 @media (max-width: 599px) {
-  .card-content {
+  .sidebar-card__content {
     gap: 0.75rem;
   }
-  .card-content img {
+  .sidebar-card__content-image {
     width: 6rem;
   }
 }

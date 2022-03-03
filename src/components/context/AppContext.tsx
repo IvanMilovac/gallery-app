@@ -20,6 +20,10 @@ type Action =
   | {
       type: "SELECT_IMAGE";
       payload: { image: IImage };
+    }
+  | {
+      type: "ADD_IMAGE";
+      payload: { image: IImage };
     };
 
 interface IProviderProps {
@@ -83,6 +87,11 @@ const reducer = (state: AppState, action: Action) => {
       return {
         ...state,
         selectedImage: selectImage(state.images, action.payload.image),
+      };
+    case "ADD_IMAGE":
+      return {
+        ...state,
+        images: [...state.images, action.payload.image],
       };
     case "ADD_COMMENT":
       return {
