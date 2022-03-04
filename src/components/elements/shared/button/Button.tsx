@@ -4,6 +4,7 @@ import "./Button.css";
 
 interface IProps {
   children?: ReactNode;
+  id?: string;
   leftIcon?: any;
   rightIcon?: any;
   buttonClass?: string;
@@ -14,6 +15,7 @@ interface IProps {
 
 const Button = ({
   children,
+  id,
   buttonClass = "btn",
   leftIcon,
   rightIcon,
@@ -24,6 +26,7 @@ const Button = ({
   return (
     <button
       className={buttonClass}
+      id={id}
       type={type}
       disabled={disabled}
       onClick={onClick}

@@ -67,7 +67,6 @@ const deleteComment = (id: string, image: IImage, images: IImage[]) => {
 };
 
 const updateComment = (id: string, newComment: string, image: IImage) => {
-  console.log({ image });
   return {
     ...image,
     comments: image.comments.map((c) => {

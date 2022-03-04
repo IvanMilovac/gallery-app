@@ -37,7 +37,6 @@ const Comment = ({ comment, rightLeft, openChat }: IProps) => {
     e: React.KeyboardEvent<HTMLInputElement>,
     id: string
   ) => {
-    console.log(e.key);
     if (e.key === "Escape") setEdit(false);
     if (e.key === "Enter") {
       dispatch({

@@ -6,8 +6,10 @@ import Input from "../../elements/shared/input/Input";
 import { AppContext } from "../../context/AppContext";
 
 import { BiSearch } from "react-icons/bi";
+import { MdLogout } from "react-icons/md";
 import { BsArrowLeft } from "react-icons/bs";
 import "./Sidebar.css";
+import Button from "../../elements/shared/button/Button";
 
 interface ISearchImage {
   searchTerm: string;
@@ -20,6 +22,7 @@ interface IProps {
 
 const Sidebar = ({ openAside, handleOpen }: IProps) => {
   const {
+    dispatch,
     state: { images },
   } = useContext(AppContext);
 
@@ -55,6 +58,13 @@ const Sidebar = ({ openAside, handleOpen }: IProps) => {
           ))
         )}
       </div>
+      <Button
+        onClick={() => dispatch({ type: "HANDLE_LOGOUT" })}
+        id="logout-mobile"
+        leftIcon={<MdLogout />}
+      >
+        Logout
+      </Button>
     </aside>
   );
 };
